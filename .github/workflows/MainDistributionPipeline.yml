@@ -37,6 +37,10 @@ jobs:
 
   deploy:
     name: Deploy extension
+    permissions:
+      actions: read
+      contents: read
+      packages: read
     if: ${{ startsWith(github.ref_name, 'v') || github.ref_name == 'main' }}
     needs:
       - build
